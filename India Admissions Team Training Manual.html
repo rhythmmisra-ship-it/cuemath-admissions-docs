@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>India Admissions Team — Training Manual | Cuemath</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Inter',sans-serif;background:#F5F5F5;color:#191919;font-size:16px;line-height:1.6;}
+
+  .topnav{position:fixed;top:0;left:0;right:0;background:#191919;border-bottom:4px solid #FFBA07;z-index:100;display:flex;align-items:center;height:60px;}
+  .nav-logo{padding:0 24px;display:flex;align-items:center;gap:10px;border-right:1px solid #333;}
+  .nav-logo-box{width:32px;height:32px;background:#FFBA07;border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;color:#191919;}
+  .nav-title{color:#fff;font-size:14px;font-weight:700;}
+  .nav-sub{color:#666;font-size:12px;}
+  .nav-links{display:flex;overflow-x:auto;padding:0 16px;gap:4px;}
+  .nav-link{color:#888;font-size:12px;font-weight:600;text-decoration:none;padding:8px 12px;border-radius:6px;white-space:nowrap;}
+  .nav-link:hover{color:#FFBA07;background:rgba(255,186,7,.1);}
+
+  .page-wrap{max-width:960px;margin:80px auto 60px;padding:0 24px;}
+
+  .cover{background:#191919;border-radius:16px;padding:48px;margin-bottom:40px;position:relative;overflow:hidden;}
+  .cover::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:#FFBA07;}
+  .cover-tag{background:rgba(255,186,7,.15);border:1px solid rgba(255,186,7,.4);color:#FFBA07;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:6px 14px;border-radius:20px;display:inline-block;margin-bottom:20px;}
+  .cover h1{color:#fff;font-size:40px;font-weight:800;line-height:1.15;margin-bottom:12px;}
+  .cover h1 span{color:#FFBA07;}
+  .cover-sub{color:#888;font-size:16px;line-height:1.6;max-width:600px;margin-bottom:32px;}
+  .cover-meta{display:flex;gap:32px;flex-wrap:wrap;}
+  .cover-meta-item label{color:#666;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px;}
+  .cover-meta-item span{color:#fff;font-size:14px;font-weight:600;}
+
+  .section{background:#fff;border-radius:12px;padding:40px;margin-bottom:32px;border:1px solid #E0E0E0;}
+  .section-bar{height:4px;background:#FFBA07;border-radius:2px;margin-bottom:24px;}
+  .section-num{color:#FFBA07;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px;}
+  .section h2{font-size:26px;font-weight:800;color:#191919;margin-bottom:8px;}
+  .section-desc{color:#666;font-size:15px;margin-bottom:32px;}
+  h3{font-size:18px;font-weight:700;color:#191919;margin:32px 0 12px;}
+  h3:first-of-type{margin-top:0;}
+  h4{font-size:13px;font-weight:700;color:#191919;margin:16px 0 6px;text-transform:uppercase;letter-spacing:.8px;}
+  p{color:#333;font-size:15px;line-height:1.65;margin-bottom:12px;}
+  strong{color:#191919;}
+
+  /* SCRIPT BLOCK — what AC says out loud */
+  .say{background:#191919;border-radius:10px;padding:24px 28px;margin:12px 0 16px;}
+  .say-label{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#FFBA07;margin-bottom:10px;}
+  .say p{color:#E8E8E8;font-size:14px;line-height:1.75;margin-bottom:10px;}
+  .say p:last-child{margin-bottom:0;}
+  .say strong{color:#FFBA07;}
+  .say em{color:#ccc;font-style:normal;}
+
+  /* INTERNAL AC INSTRUCTION */
+  .ac-note{background:#FFF9E6;border-left:4px solid #FFBA07;border-radius:0 8px 8px 0;padding:14px 18px;margin:10px 0 16px;}
+  .ac-note-label{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#92710A;margin-bottom:6px;}
+  .ac-note p{color:#555;font-size:13px;margin-bottom:6px;}
+  .ac-note p:last-child{margin-bottom:0;}
+
+  /* OBJECTION BLOCK */
+  .obj{border:1px solid #E0E0E0;border-radius:8px;margin:12px 0 16px;overflow:hidden;}
+  .obj-trigger{background:#FEF2F2;border-bottom:1px solid #F3C6C6;padding:12px 16px;}
+  .obj-trigger-label{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#DC2626;margin-bottom:4px;}
+  .obj-trigger p{color:#7F1D1D;font-size:13px;font-weight:600;margin:0;font-style:italic;}
+  .obj-counter{padding:14px 16px;}
+  .obj-counter-label{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#059669;margin-bottom:8px;}
+  .obj-counter p{color:#333;font-size:13px;line-height:1.6;margin-bottom:8px;}
+  .obj-counter p:last-child{margin-bottom:0;}
+  .obj-counter strong{color:#191919;}
+
+  /* STEP INDICATOR */
+  .step{display:flex;gap:16px;align-items:flex-start;margin-bottom:8px;}
+  .step-num{width:28px;height:28px;border-radius:50%;background:#FFBA07;color:#191919;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+  .step-body{flex:1;}
+  .step-title{font-size:14px;font-weight:700;color:#191919;margin-bottom:4px;}
+  .step-sub{font-size:13px;color:#666;}
+
+  /* VERSION BADGE */
+  .version-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:8px;font-size:12px;font-weight:700;margin-bottom:24px;}
+  .version-a{background:#F0FDF4;border:1.5px solid #00E573;color:#065F46;}
+  .version-b{background:#EEF4FF;border:1.5px solid #3B82F6;color:#1E3A8A;}
+
+  /* INFO BOXES */
+  .box{border-radius:10px;padding:18px 22px;margin-bottom:16px;}
+  .box-blue{background:#EEF4FF;border-left:4px solid #3B82F6;}
+  .box-red{background:#FEF2F2;border-left:4px solid #EF4444;}
+  .box-green{background:#F0FDF4;border-left:4px solid #00E573;}
+  .box-dark{background:#191919;border-radius:10px;padding:18px 22px;margin-bottom:16px;}
+  .box-label{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;}
+  .box-blue .box-label{color:#2563EB;}
+  .box-red .box-label{color:#DC2626;}
+  .box-green .box-label{color:#059669;}
+  .box-dark .box-label{color:#FFBA07;}
+  .box p{font-size:13px;color:#333;line-height:1.6;margin-bottom:6px;}
+  .box p:last-child{margin-bottom:0;}
+  .box-dark p{color:#ccc;}
+
+  /* TABLES */
+  table{width:100%;border-collapse:collapse;margin-bottom:20px;font-size:13px;}
+  th{background:#191919;color:#fff;font-weight:700;padding:10px 14px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.5px;}
+  td{padding:10px 14px;border-bottom:1px solid #E0E0E0;color:#333;vertical-align:top;}
+  tr:last-child td{border-bottom:none;}
+  tr:nth-child(even) td{background:#FAFAFA;}
+
+  /* DIVIDER */
+  .pitch-divider{height:2px;background:linear-gradient(to right,#FFBA07,transparent);margin:32px 0;border-radius:2px;}
+
+  @media(max-width:720px){
+    .cover h1{font-size:28px;}
+    .section{padding:24px;}
+  }
+  @media print{
+    .topnav{display:none!important;}
+    .page-wrap{margin:20px auto!important;padding:0 16px;}
+    .section{break-inside:avoid;page-break-inside:avoid;}
+    .say{break-inside:avoid;page-break-inside:avoid;}
+    .obj{break-inside:avoid;page-break-inside:avoid;}
+    .step{break-inside:avoid;page-break-inside:avoid;}
+    body{background:#fff!important;}
+    .cover{border-radius:0;}
+    a{color:inherit!important;text-decoration:none!important;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="nav-logo">
+    <div class="nav-logo-box">C</div>
+    <div>
+      <div class="nav-title">India Admissions — Training Manual</div>
+      <div class="nav-sub">Cuemath Internal · April 2026</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#ql-ts" class="nav-link">QL→TS Pitch</a>
+    <a href="#td-p-a" class="nav-link">TD→P (Briefed Parent)</a>
+    <a href="#td-p-b" class="nav-link">TD→P (Unbriefed Parent)</a>
+    <a href="#objections" class="nav-link">All Objections</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="cover">
+    <div class="cover-tag">Cuemath · India Business · Training Document</div>
+    <h1>India Admissions Team<br><span>Training Manual</span></h1>
+    <p class="cover-sub">Word-for-word pitch scripts for QL→TS and TD→P calls. Follow these exactly until the pitch is yours. Every objection is built in. Read alongside the SOP — this is the "what to say" to the SOP's "when to say it."</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item"><label>Companion to</label><span>India Admissions Team SOP</span></div>
+      <div class="cover-meta-item"><label>Admissions TL</label><span>Neeraj Yadav</span></div>
+      <div class="cover-meta-item"><label>Head of India Business</label><span>Rhythm Misra</span></div>
+      <div class="cover-meta-item"><label>Version</label><span>April 2026</span></div>
+    </div>
+  </div>
+
+  <!-- ====================== SECTION 1: QL→TS ====================== -->
+  <div class="section" id="ql-ts">
+    <div class="section-bar"></div>
+    <div class="section-num">Section 1</div>
+    <h2>The QL→TS Call — Qualifying Pitch</h2>
+    <p class="section-desc">Target duration: 12–15 minutes. This is not a booking call — it is a qualification and ideology call. Every parent who proceeds to a trial must understand MathFit, know the price, and confirm they have a laptop. If they fail any filter, do not push them to trial.</p>
+
+    <div class="box box-blue">
+      <div class="box-label">Before You Dial — Check All Four</div>
+      <p>1. Child's name and grade — K–8 only. Grade 9+ is not a lead for us.<br>
+      2. Board — CBSE / ICSE / IB / Cambridge / State — know it before you call.<br>
+      3. Channel source — referral leads are warmer; perf marketing leads need more qualification.<br>
+      4. Form a hypothesis on parent archetype — Analytical / Concerned / Ambitious / Hesitant. You'll confirm it in the first 2 minutes.</p>
+    </div>
+
+    <div class="pitch-divider"></div>
+
+    <!-- STEP 1 -->
+    <div class="step"><div class="step-num">1</div><div class="step-body"><div class="step-title">Warm Open + Confirm Details — 1 min</div><div class="step-sub">Build trust immediately. Parents who feel known stay on the line.</div></div></div>
+
+    <div class="say">
+      <div class="say-label">AC Says</div>
+      <p>"Hi, am I speaking with <strong>[Parent Name]</strong>? Hi [Name], this is <strong>[AC Name]</strong> calling from Cuemath — the MathFit programme your child is registered with. How are you doing today?"</p>
+      <p><em>[Wait for response.]</em></p>
+      <p>"[Name], I have <strong>[Child's Name]</strong> here in my system, in <strong>Grade [X]</strong>. Is that right?" <em>[Confirm.] </em> "And they're following the <strong>[Board]</strong> curriculum?" <em>[Confirm.]</em></p>
+      <p>"Perfect. Is this a good time to talk?"</p>
+    </div>
+
+    <div class="ac-note">
+      <div class="ac-note-label">AC Instruction</div>
+      <p>If they say "not a good time" — ask: "Of course — when would work better? Later today or tomorrow morning?" Lock a specific time. Do not hang up without a callback time.</p>
+      <p>If they agree — move immediately to discovery questions. Do not start pitching yet.</p>
+    </div>
+
+    <div class="pitch-divider"></div>
+
+    <!-- STEP 2 -->
+    <div class="step"><div class="step-num">2</div><div class="step-body"><div class="step-title">Discovery Questions — 3–4 min</div><div class="step-sub">Listen more than you speak. These answers shape your entire pitch.</div></div></div>
+
+    <div class="ac-note">
+      <div class="ac-note-label">AC Instruction</div>
+      <p>Ask all five questions. Do not rush. The parent's answers tell you their archetype, their fear, and their expectation. Reflect the answer back before asking the next question — this shows you're listening, not just collecting data.</p>
+    </div>
+
+    <div class="say">
+      <div class="say-label">AC Says — 5 Discovery Questions</div>
+      <p><strong>Q1:</strong> "What made you reach out to Cuemath — is there something specific about [Child's Name]'s maths that you're looking to improve?" <em>[Listen fully. Don't interrupt.]</em></p>
+      <p><strong>Q2:</strong> "How did you come across Cuemath — was it through a friend, or did you see us online?" <em>[Referral = warm. Online = needs more qualification.]</em></p>
+      <p><strong>Q3:</strong> "How is [Child's Name] currently doing in maths at school — would you say they're confident, average, or finding it a bit challenging?" <em>[This tells you FUAR dimension and GRIC gap.]</em></p>
+      <p><strong>Q4:</strong> "Who is supporting [Child's Name] with maths at the moment — do they have a tutor or any extra help?" <em>[Identifies competitor / switching situation.]</em></p>
+      <p><strong>Q5:</strong> "Is [Child's Name] involved in any other extra-curricular activities — sports, music, coding?" <em>[This helps with scheduling and commitment conversation.]</em></p>
+    </div>
+
+    <div class="ac-note">
+      <div class="ac-note-label">After Q1 — Identify Archetype</div>
+      <p><strong>If they mention a specific problem</strong> (marks dropping, silly mistakes, weak concepts) → Concerned parent. Address the gap before the ideology.</p>
+      <p><strong>If they mention data / board / curriculum</strong> → Analytical parent. Lead with FUAR framework and measurement.</p>
+      <p><strong>If they mention IIT / Olympiad / "already doing well"</strong> → Ambitious parent. Position MathFit as the layer that takes strong to exceptional.</p>
+      <p><strong>If they seem vague / say "just curious"</strong> → Hesitant/Busy. Keep it low friction. Let the trial do the talking.</p>
+    </div>
+
+    <div class="pitch-divider"></div>
+
+    <!-- STEP 3 -->
+    <div class="step"><div class="step-num">3</div><div class="step-body"><div class="step-title">The MathFit Reframe — 2–3 min</div><div class="step-sub">This is the ideology foundation. Every parent must understand this before the trial.</div></div></div>
+
+    <div class="say">
+      <div class="say-label">AC Says — AI Era Opening</div>
+      <p>"[Name], before I tell you about Cuemath, I want to share something that I think every parent today needs to hear."</p>
+      <p>"Our kids are growing up in a world being completely reshaped by artificial intelligence. The devices in our pockets can now crunch numbers faster and more accurately than any human ever could. So the question every parent should be asking is — <strong>what is the point of math as we knew it?</strong> What skills actually matter when calculation is basically free and everywhere?"</p>
+      <p>"The old way — speed tricks, memorisation, mechanical calculation — that's exactly what AI does. That's becoming obsolete for humans. The future belongs to something different: <strong>mathematical thinking</strong>. The ability to reason, to see patterns, to look at a problem you've never seen before — and not be afraid of it."</p>
+    </div>
+
+    <div class="say">
+      <div class="say-label">AC Says — Why MathFit Exists: The Story</div>
+      <p>"And I want to share where this idea came from — because it makes this real."</p>
+      <p>"Cuemath's founder — <strong>Manan Khurma</strong> — is an IIT Delhi alumnus. He built Cuemath into a global programme operating in <strong>80+ countries</strong>. And from that vantage point, he had access to something most educators don't — he could observe how children from completely different countries and systems were learning math, and what was actually working."</p>
+      <p>"That observation led to a hypothesis: <em>what if we designed a curriculum specifically around building mathematical thinking — not just speed and procedures?</em> So Cuemath ran a pilot. Real teachers, real students, measured outcomes. The results were compelling."</p>
+      <p>"And then we did something very few edtech companies actually do: we spent <strong>six months training our teachers specifically</strong> in this method. Not general tutoring. The specific cue-based approach that builds MathFit. <strong>From 1st March this year, we've been live with the MathFit curriculum</strong> — grounded in research, tested in a pilot, and delivered by teachers who've gone through dedicated training for it."</p>
+    </div>
+
+    <div class="say">
+      <div class="say-label">AC Says — MathFit Definition</div>
+      <p>"That's what we mean when we say <strong>MathFit</strong>. It's not about who gets the answer fastest. It's about a child's ability to reason things out, see patterns, explain their ideas clearly, and tackle an unfamiliar problem with confidence — not fear."</p>
+      <p>"Think of it exactly like physical fitness. You don't become physically fit by watching exercise videos. You go, you practice, you get coached. <strong>Mathematical fitness works exactly the same way.</strong> Cuemath is that gym."</p>
+      <p>"So when you enrol [Child's Name] with Cuemath, you're not enrolling them in a math class. You're starting their MathFit journey."</p>
+    </div>
+
+    <div class="ac-note">
+      <div class="ac-note-label">For Concerned Parent — Insert This Before the Reframe</div>
+      <p>If parent mentioned a specific problem in Q1, address it first: "I hear you — the [specific issue they mentioned, e.g. silly mistakes / weak fractions] — and I want to tell you exactly how we address that. But first, let me share something about how we approach this at Cuemath..."  Then go into the MathFit reframe. The parent must feel heard before they'll listen to ideology.</p>
+    </div>
+
+    <div class="pitch-divider"></div>
+
+    <!-- STEP 4 -->
+    <div class="step"><div class="step-num">4</div><div class="step-body"><div class="step-title">Make It Real — Grade-Specific Example — 1 min</div><div class="step-sub">Abstract ideology becomes concrete belief when the parent can picture it for their child's age.</div></div></div>
+
+    <div class="say">
+      <div class="say-label">AC Says — For Grade 3–5</div>
+      <p>"Let me make this real for you. In a Cuemath class for [Child's Name]'s age, we might give the child a scenario: <strong>'You're opening an ice cream cart. What do you need to know to make a profit?'</strong> The child starts thinking about cost, selling price, footfall, weather. They're doing multiplication, division, percentages — but they don't even realise they're doing maths. They think they're running a business. That is MathFit in action."</p>
+    </div>
+
+    <div class="say">
+      <div class="say-label">AC Says — For Grade 6–8</div>
+      <p>"For [Child's Name]'s grade, we go deeper. We might introduce a real data set — say, cricket match scores or a stock price chart — and ask: <strong>'What do you see? What's the pattern? What would you predict?'</strong> They're using algebra, statistics, logical reasoning — but the context is something that actually interests them. They start seeing math everywhere, not just in textbooks."</p>
+    </div>
+
+    <div class="pitch-divider"></div>
+
+    <!-- STEP 5 -->
+    <div class="step"><div class="step-num">5</div><div class="step-body"><div class="step-title">Cover Curriculum Objections Proactively — 30 sec</div><div class="step-sub">Say it before they ask it. Shows confidence and removes doubt.</div></div></div>
+
+    <div class="say">
+      <div class="say-label">AC Says</div>
+      <p>"Now I know what you're thinking — <strong>does this cover the school syllabus?</strong> Absolutely. And actually, the Cuemath curriculum has <strong>four parts</strong> — every one of them taught through the same cue-based, MathFit approach."</p>
+      <p>"<strong>First: Grade-wise and board-wise academic curriculum.</strong> CBSE, ICSE, IB, Cambridge — every concept, every chapter, fully aligned. But unlike school, [Child's Name] isn't being told the answer. They're being guided to discover it."</p>
+      <p>"<strong>Second: Mental Maths.</strong> Yes, this builds calculation speed. But the deeper benefit — and this is what parents notice after a few months — is focus. When a child consistently practices mental computation, they're training their brain to block out distraction. It builds concentration the same way meditation does. That carries into every subject."</p>
+      <p>"<strong>Third: Enrichment — real-world projects.</strong> Not textbook word problems. Live applied maths scenarios — what does a business need to break even? How does an architect use geometry? [Child's Name] connects math to the real world, which is exactly what builds the Application pillar of MathFit."</p>
+      <p>"<strong>Fourth: IMO and HOTS — High Order Thinking Skills.</strong> Olympiad-style problems. Pattern recognition, logical arguments, unfamiliar problem types. This is what separates strong school students from competitive exam performers."</p>
+      <p>"What changes is not what we teach. <strong>What changes is how we teach it — cue-based, MathFit, every single class.</strong>"</p>
+    </div>
+
+    <div class="pitch-divider"></div>
+
+    <!-- STEP 6 -->
+    <div class="step"><div class="step-num">6</div><div class="step-body"><div class="step-title">1:1 Format + Teaching Method + Laptop Check — 1 min</div><div class="step-sub">Qualify the lead on laptop and confirm 1:1 understanding.</div></div></div>
+
+    <div class="say">
+      <div class="say-label">AC Says</div>
+      <p>"Cuemath is fully 1:1 — one teacher, one student, every single class. This MathFit ideology cannot work in a group. The teacher needs to respond to <em>your child's</em> thinking in real time — not 15 children at once."</p>
+      <p>"And the way we teach is what we call <strong>cue-based learning</strong>. If a child gives a wrong answer, the teacher doesn't correct immediately. They ask: <em>'Tell me why you think that.'</em> The child thinks, discovers the error themselves, and corrects it. That discovery stays forever. A teacher who explains builds dependency. A teacher who cues builds confidence."</p>
+      <p>"One quick question — for the best trial experience, [Child's Name] will need a <strong>laptop or a desktop</strong> — not a phone, not a tablet. Do you have one at home?" <em>[Confirm. If no laptop → this is a disqualifying signal. Note it.]</em></p>
+    </div>
+
+    <div class="pitch-divider"></div>
+
+    <!-- STEP 7 -->
+    <div class="step"><div class="step-num">7</div><div class="step-body"><div class="step-title">Draw Out the Parent's Expectation — 1 min</div><div class="step-sub">This is the most important question on the call. Stop talking after you ask it.</div></div></div>
+
+    <div class="say">
+      <div class="say-label">AC Says</div>
+      <p>"[Name] — as a parent, nobody knows [Child's Name] better than you. I've shared what we build at Cuemath. Now I want to understand: <strong>what is your expectation from us?</strong> What would you want to see in [Child's Name] — say six months from now — that would tell you that this has worked?"</p>
+      <p><em>[Stop. Wait. Listen fully. Do not fill the silence.]</em></p>
+    </div>
+
+    <div class="ac-note">
+      <div class="ac-note-label">AC Instruction — What to Do With the Answer</div>
+      <p>Whatever the parent says — repeat it back through the MathFit lens. Examples:</p>
+      <p>Parent says "I want him to stop making silly mistakes" → "Absolutely — that's a Fluency gap. Our programme is specifically designed to build accuracy through understanding, not repetition. Your child won't just practice more — they'll understand why the mistake is happening."</p>
+      <p>Parent says "I want her to love math" → "That's exactly GRIC — the mindset pillar of MathFit. Confidence and interest come when the child experiences success at the right level of difficulty. The teacher's job is to keep [child] in that sweet spot where the problem is just hard enough to be exciting."</p>
+      <p>Parent says "I want him ready for JEE / Olympiad" → "Perfect. The Reasoning pillar of MathFit is exactly what competitive exams test — unfamiliar problems, pattern recognition, logical arguments. We start building that from Grade 3 onwards."</p>
+    </div>
+
+    <div class="pitch-divider"></div>
+
+    <!-- STEP 8 -->
+    <div class="step"><div class="step-num">8</div><div class="step-body"><div class="step-title">Present Pricing — 1 min</div><div class="step-sub">State it with full confidence. No hedging. No apology. Then stop talking.</div></div></div>
+
+    <div class="say">
+      <div class="say-label">AC Says</div>
+      <p>"[Name], let me share how the programme is structured. Cuemath runs on 1:1 classes, twice a week. The plans are:"</p>
+      <p>"<strong>3 months</strong> — ₹30,680 including GST. 26 classes.<br>
+      <strong>6 months</strong> — ₹55,224 including GST. 52 classes. About 10% better value.<br>
+      <strong>12 months</strong> — ₹98,176 including GST. 104 classes. About 20% better value."</p>
+      <p>"My recommendation for [Child's Name] — based on everything you've told me — is the <strong>12-month plan</strong>. MathFit takes time to compound. The first 3 months are foundation. Months 4–6 is where the thinking shift happens. Month 7 onwards is where parents say they can't believe how differently their child approaches problems. You need to be in for long enough for the compounding to show."</p>
+      <p>"And [Name] — the most important thing: we have a <strong>100% pro-rata refund on unused classes</strong>. If at any point you feel it's not working, every class your child hasn't attended comes back to you. Zero risk. You only pay for what [Child's Name] uses."</p>
+      <p><em>[Stop. Let the parent respond. Do not offer a cheaper option before they ask.]</em></p>
+    </div>
+
+    <!-- Price Objections -->
+    <div class="obj">
+      <div class="obj-trigger"><div class="obj-trigger-label">Objection</div><p>"It's too expensive" / "The fees are very high"</p></div>
+      <div class="obj-counter">
+        <div class="obj-counter-label">Counter</div>
+        <p><strong>Angle 1 — Quality teaching is expensive. Poor quality teaching is more expensive.</strong> "Here's a story I think is worth sharing. A few years ago, an edtech company — not Cuemath — decided to scale fast by hiring 1,000 tutors at ₹15,000 a month. Revenue grew 500% in 12 months. Looked incredible. Then renewals came around. And they collapsed — because parents had paid for 'learning' and their children hadn't actually learned. The lesson: cheap teaching destroys trust faster than expensive teaching ever could. Quality teaching is expensive. Poor quality teaching ends up costing far more."</p>
+        <p><strong>Angle 2 — Teacher quality:</strong> "When you pay ₹1,000 per class, your child's teacher earns ₹700–750 per session. That is what it takes to attract a genuinely qualified math educator who's been through six months of MathFit training. On platforms charging ₹300–500 per class, the teacher earns ₹150–200 per hour. No quality educator accepts that long-term. The tutor your child gets is a direct reflection of what you invest."</p>
+        <p><strong>Angle 3 — Not the same product:</strong> "Whatever you're comparing us with — check first: is it 1:1 or a group class? Almost every cheaper option is a batch session. Cuemath is live 1:1 with a dedicated teacher, every single class. We are not in the same dimension."</p>
+        <p><strong>Angle 4 — Renewal rate proves ROI:</strong> "Here's one number that tells the whole story: Cuemath's annual renewal rate is 75%+. That means if 100 families enrol today, more than 75 are back next year — voluntarily. The average across edtech in India is a fraction of that. Parents who get ROI renew. The renewal rate is the proof."</p>
+        <p><strong>Angle 5 — Investment framing:</strong> "A child who builds strong mathematical foundations in Grades 3–8 develops logical thinking and academic confidence that carries into every subject and career. The returns on this investment far outlast the programme."</p>
+      </div>
+    </div>
+
+    <div class="obj">
+      <div class="obj-trigger"><div class="obj-trigger-label">Objection</div><p>"Can you give a discount?" / "Any offer going on?"</p></div>
+      <div class="obj-counter">
+        <div class="obj-counter-label">Counter</div>
+        <p>"I want to be completely transparent — we have one price for every parent. No Diwali offers. No Republic Day discounts. No special rates for anyone. Here's why: imagine you enrolled today at a certain price, and three months later your neighbour — same teacher, same programme — enrolled during a 'sale' for less. Is that fair to you? In the education business, that kind of inconsistency destroys trust. Our price is fixed. No discounts, no exceptions. Every family deserves to be treated exactly the same."</p>
+      </div>
+    </div>
+
+    <div class="obj">
+      <div class="obj-trigger"><div class="obj-trigger-label">Objection</div><p>"My friend / someone I know pays less at Cuemath"</p></div>
+      <div class="obj-counter">
+        <div class="obj-counter-label">Counter</div>
+        <p>"Thank you for bringing that up. In the past, there were instances where different pricing was offered to different families — and that was not the right approach. From February 2026, every family enrolling pays the same price. What your friend received was part of an older structure. What you see today is what every new family sees — no hidden deals, no negotiation."</p>
+      </div>
+    </div>
+
+    <div class="obj">
+      <div class="obj-trigger"><div class="obj-trigger-label">Objection</div><p>"Why only 3, 6, 12 months? Can't we do monthly?"</p></div>
+      <div class="obj-counter">
+        <div class="obj-counter-label">Counter</div>
+        <p>"Three genuine reasons. First — teacher slot stability. If you book a teacher for one month, and next month another family books that teacher for a year, your child loses their teacher and has to start over. Our tenure structure guarantees your child keeps the same teacher throughout — that's the biggest predictor of MathFit progress. Second — personalization takes time. The teacher needs 4–6 weeks just to complete diagnostics and design a proper learning path. A monthly plan would end before the learning has even properly begun. Third — the compounding. MathFit is not a sprint. You won't see the full shift in 4 weeks."</p>
+      </div>
+    </div>
+
+    <div class="pitch-divider"></div>
+
+    <!-- STEP 9 -->
+    <div class="step"><div class="step-num">9</div><div class="step-body"><div class="step-title">Schedule the Trial + Close — 1 min</div><div class="step-sub">The trial is the decision point. Make it easy to say yes to.</div></div></div>
+
+    <div class="say">
+      <div class="say-label">AC Says</div>
+      <p>"[Name], the best way to see whether this is the right fit is the <strong>trial class — it's free, 55 minutes, and there's zero commitment</strong>. Come watch [Child's Name]. Sit in the session. At the end, your instinct will tell you. That's the point of the trial."</p>
+      <p>"When are you free this week? Tell me a day and time that works for [Child's Name] — morning, afternoon, or evening — and I'll set it up."</p>
+      <p><em>[Once they give a slot — confirm it clearly:]</em></p>
+      <p>"Perfect — [Day], [Date], at [Time]. I'll confirm this on WhatsApp right now. One thing — please make sure [Child's Name] is on a <strong>laptop or desktop</strong> for the session, and it would be wonderful if you could be present for at least part of the class. Does that work?"</p>
+    </div>
+
+    <div class="obj">
+      <div class="obj-trigger"><div class="obj-trigger-label">Objection</div><p>"We're comparing with other platforms — let me think"</p></div>
+      <div class="obj-counter">
+        <div class="obj-counter-label">Counter</div>
+        <p>"Absolutely — and I'd encourage you to compare. One thing I'd ask you to look at when comparing: is the other platform 1:1 or a group? Is the curriculum personalized to your child's specific level? And does the teaching method help the child discover answers, or does the teacher explain them? Those three questions will tell you everything. The trial costs you nothing and gives you a direct experience to compare against. What day works for [Child's Name]?"</p>
+      </div>
+    </div>
+
+    <div class="obj">
+      <div class="obj-trigger"><div class="obj-trigger-label">Objection</div><p>"We already have a home tutor"</p></div>
+      <div class="obj-counter">
+        <div class="obj-counter-label">Counter</div>
+        <p>"A tutor helps with what the teacher said yesterday. Cuemath builds the thinking that makes your child need less explaining tomorrow. A home tutor and Cuemath serve completely different purposes — and many of our families have both. Parents consistently tell us: after 3 months of Cuemath, the home tutor says the child is asking better questions. That's the MathFit effect. Come try the trial — you'll see the difference in how the session feels."</p>
+      </div>
+    </div>
+
+    <div class="obj">
+      <div class="obj-trigger"><div class="obj-trigger-label">Objection</div><p>"We're already enrolled with Bhanzu / Vedantu / an online platform"</p></div>
+      <div class="obj-counter">
+        <div class="obj-counter-label">Counter</div>
+        <p>"The question isn't which platform has more features. It's whether your child is becoming a mathematical thinker or just a faster calculator. In 10 years, calculators are irrelevant. Thinkers are not. Come try the trial — 55 minutes will give you a direct comparison of what the experience feels like."</p>
+      </div>
+    </div>
+
+    <div class="obj">
+      <div class="obj-trigger"><div class="obj-trigger-label">Objection</div><p>"My child has exams coming up — bad timing"</p></div>
+      <div class="obj-counter">
+        <div class="obj-counter-label">Counter</div>
+        <p>"Actually, exam time is when MathFit training matters most — not as extra pressure, but as the opposite. Our approach builds confidence about what the child already knows. One 55-minute session won't hurt their schedule — and it might be exactly what they need before exams to feel settled and clear-headed."</p>
+      </div>
+    </div>
+
+    <div class="obj">
+      <div class="obj-trigger"><div class="obj-trigger-label">Objection</div><p>"Let me discuss with my husband / wife first"</p></div>
+      <div class="obj-counter">
+        <div class="obj-counter-label">Counter</div>
+        <p>"Of course — this is a family decision. While you discuss, one thing worth sharing: the trial is free, so there's nothing to commit to yet. Shall I book a slot now — and you can always reschedule if needed? That way [Child's Name] gets to experience it before you make any decision."</p>
+      </div>
+    </div>
+
+    <div class="obj">
+      <div class="obj-trigger"><div class="obj-trigger-label">Objection</div><p>"My child is too young" / "Grade 1–2, is it relevant?"</p></div>
+      <div class="obj-counter">
+        <div class="obj-counter-label">Counter</div>
+        <p>"Starting young is the biggest advantage. The younger a child starts building mathematical confidence, the more natural their relationship with numbers becomes. At this age, we don't do dry calculations — we do activities designed for short attention spans, visual puzzles, real-world exploration. Children often love maths more at a young age because it's presented as play. And the mindset habits they build now — curiosity, persistence, confidence — carry them through every grade."</p>
+      </div>
+    </div>
+
+    <div class="obj">
+      <div class="obj-trigger"><div class="obj-trigger-label">Objection</div><p>"Screen time is already high at home"</p></div>
+      <div class="obj-counter">
+        <div class="obj-counter-label">Counter</div>
+        <p>"Completely valid concern. There's a huge difference between passive screen time — videos, scrolling — and active screen time like solving problems live with a teacher. In a Cuemath session, your child is actively thinking, talking, responding, being challenged. It's much closer to having a tutor in the room than watching a video. The screen is the medium — the experience is 1:1 coaching."</p>
+      </div>
+    </div>
+
+    <div class="box box-green" style="margin-top:24px;">
+      <div class="box-label">Post-Call Checklist</div>
+      <p>✓ Trial confirmed with specific date and time<br>
+      ✓ Parent confirmed laptop is available and they'll be present<br>
+      ✓ Stage 1 WhatsApp sent within 5 minutes of call ending<br>
+      ✓ Superleap updated: stage moved, parent archetype noted, key expectation logged<br>
+      ✓ If RNR: attempt logged with timestamp, next attempt scheduled</p>
+    </div>
+
+    <div class="box box-red" style="margin-top:12px;">
+      <div class="box-label">The Engagement Closer — Use On Every Call</div>
+      <p style="color:#7F1D1D;"><em>"After this call, ask [Child's Name]: give me five reasons why you're studying math. They'll say — Papa said, Mama said, teacher said, exam is coming. Then ask: give me five pros and five cons of every app on my phone. They'll draw a blank. Because the perspective is — math is something I have to do. Cuemath changes that. Math is not just learning — math is everything around you."</em></p>
+    </div>
+  </div>
+
+  <!-- ====================== SECTION 2: TD→P VERSION A ====================== -->
+  <div class="section" id="td-p-a">
+    <div class="section-bar"></div>
+    <div class="section-num">Section 2</div>
+    <h2>The TD→P Call — Version A</h2>
+    <div class="version-badge version-a">✓ Use This Version: Parent Was Briefed Before Trial (Full QL→TS Call Was Done)</div>
+    <p class="section-desc">The parent had a full conversation before the trial. They understand MathFit, they've heard the pricing, they know the ideology. Your job now is to connect what they experienced in the trial to the MathFit journey they already understand — and close.</p>
+
+    <div class="box box-blue">
+      <div class="box-label">Before You Call — Prepare in 2 Minutes</div>
+      <p>1. Check Superleap: teacher's trial notes. What did the teacher observe? What gaps or strengths came up?<br>
+      2. Pull the parent archetype from your QL→TS notes. Use the same framing they connected with.<br>
+      3. Recall the expectation they gave you on the intro call — this is your hook.<br>
+      4. Decide your recommendation before you dial: 12-month or 6-month, 2/week or 3/week.</p>
+    </div>
+
+    <div class="box" style="background:#FFF9E6;border-left:4px solid #FFBA07;">
+      <div class="box-label" style="color:#92710A;">Timing Rule</div>
+      <p style="color:#555;">Call within 60 minutes of the trial completing. Emotion is at its peak right now. Every hour of delay is conversion probability you're giving back. On an active working day — 60 minutes is non-negotiable.</p>
+    </div>
+
+    <div class="pitch-divider"></div>
+
+    <!-- STEP 1 -->
+    <div class="step"><div class="step-num">1</div><div class="step-body"><div class="step-title">Open With Trial Feedback — Not a Pitch — 1–2 min</div><div class="step-sub">The parent is still processing. Let them speak first. Their answer tells you everything.</div></div></div>
+
+    <div class="say">
+      <div class="say-label">AC Says</div>
+      <p>"Hi [Parent Name]! This is [AC Name] from Cuemath — hope the class just went well. I'm calling to check in. <strong>How did [Child's Name] find it?</strong> Because at the end of the day, [Child's Name] is the star of the show — their experience matters most."</p>
+      <p><em>[Stop. Wait. Let them speak fully.]</em></p>
+      <p>"And from your side — as a parent watching — what did you observe? Did the teacher's style feel like a good match for [Child's Name]?"</p>
+      <p><em>[Listen. Absorb. Do not interrupt.]</em></p>
+    </div>
+
+    <div class="ac-note">
+      <div class="ac-note-label">How to Read the Response</div>
+      <p><strong>Positive / excited response</strong> → Move directly to Step 2. Close with confidence. Emotion is high — don't let it cool with too much more talking.</p>
+      <p><strong>Neutral response</strong> ("it was okay", "fine") → Diagnose: was it Energy? Rapport? Talk Time? Ask: "What would have made it even better for [Child's Name]?" Then handle before closing.</p>
+      <p><strong>Negative response</strong> ("my child didn't connect", "the teacher was explaining too much") → Do not close. Acknowledge. Offer a second trial. "I completely understand — not every teacher is the right match for every child. That's exactly why we have the trial. Can I arrange one more session with a different teacher? Same format, no cost."</p>
+    </div>
+
+    <div class="pitch-divider"></div>
+
+    <!-- STEP 2 -->
+    <div class="step"><div class="step-num">2</div><div class="step-body"><div class="step-title">Connect What They Saw to MathFit — 1–2 min</div><div class="step-sub">They've already been briefed. Now you're giving them the lens to interpret the experience.</div></div></div>
+
+    <div class="say">
+      <div class="say-label">AC Says</div>
+      <p>"[Parent], what you saw in that session today — that was Day 1 of the MathFit journey."</p>
+      <p>"Do you remember what I shared when we first spoke — about cue-based teaching? Today you saw it in action. The teacher wasn't explaining answers — they were asking questions, giving clues, guiding [Child's Name] to find their own answers. <strong>A teacher who explains builds dependency. A teacher who cues builds confidence.</strong>"</p>
+      <p>"And that expectation you mentioned to me — <strong>[repeat the expectation they gave on the intro call]</strong> — that's exactly what this journey is designed to deliver. The first few months are foundation-building. That's what you saw today — the teacher diagnosing where [Child's Name] is. From here, the sessions get progressively more targeted to [Child's Name] specifically."</p>
+    </div>
+
+    <div class="pitch-divider"></div>
+
+    <!-- STEP 3 -->
+    <div class="step"><div class="step-num">3</div><div class="step-body"><div class="step-title">Make a Personalised Recommendation — 1–2 min</div><div class="step-sub">One recommendation. Specific to this child. Do not list options — make a decision for them.</div></div></div>
+
+    <div class="say">
+      <div class="say-label">AC Says</div>
+      <p>"Based on what the teacher observed today, and based on what you told me when we first spoke — <strong>my recommendation for [Child's Name] is the 12-month plan, 2 classes a week.</strong>"</p>
+      <p>"Here's why specifically: [Child's Name] is [at Grade X, which is a critical foundation year / showing signs of [specific strength or gap from teacher notes]]. The 12-month plan gives enough time for the diagnostic work, the gap-filling, and then the actual MathFit compounding to show. You won't see the full shift in 3 months. Month 7–8 is where parents tell us things really click. You need to be in long enough for that to happen."</p>
+    </div>
+
+    <div class="pitch-divider"></div>
+
+    <!-- STEP 4 -->
+    <div class="step"><div class="step-num">4</div><div class="step-body"><div class="step-title">Walk Through What's Included — 2 min</div><div class="step-sub">Brief — they already know the broad picture. Just reinforce the specifics.</div></div></div>
+
+    <div class="say">
+      <div class="say-label">AC Says</div>
+      <p>"Here's what the 12-month plan includes for [Child's Name] — and I want to walk you through the curriculum specifically, because this is not what you'd expect."</p>
+      <p>"The Cuemath curriculum has <strong>four parts</strong>. Every single part is delivered the same way: <strong>1:1, cue-based, with MathFit as the teaching philosophy.</strong> The teacher never explains — they guide. [Child's Name] does the thinking."</p>
+      <p>"<strong>Part 1: Grade-wise and board-wise academic curriculum.</strong> Fully aligned to [Child's Name]'s board — CBSE, ICSE, IB, Cambridge, whatever it is. Every concept, every chapter. But instead of the teacher going through it, [Child's Name] is guided to figure it out. That understanding sticks permanently."</p>
+      <p>"<strong>Part 2: Mental Maths curriculum.</strong> On the surface, this builds calculation speed. But the bigger benefit — and this is what parents tell us they notice after 3–4 months — is <strong>focus</strong>. When a child consistently practices mental computation, they're training their brain to hold attention and block out distraction. The same neural pathways that make you fast at mental math are the ones that stop you getting distracted during study. It transfers to every subject."</p>
+      <p>"<strong>Part 3: Enrichment — live real-world projects.</strong> Not word problems from a textbook. Real scenarios: what does a business need to break even? How does an architect calculate load? What does an investor actually do with percentages? [Child's Name] sees why math exists in the world — and that connection is what builds the Application pillar of MathFit. This is where the Interest and Relevance mindset shifts happen."</p>
+      <p>"<strong>Part 4: IMO preparation and HOTS — High Order Thinking Skills.</strong> Olympiad-style problems, pattern recognition, logical arguments, and problem types [Child's Name] has never seen before. This is the Reasoning pillar — and it's what separates strong school students from competitive exam performers. We build this from the ground up, from whatever grade [Child's Name] is in right now."</p>
+      <p>"On top of the curriculum: <strong>monthly PTMs</strong> — every month you sit with the teacher and hear exactly where [Child's Name] is on each pillar, what's been built, and what the next month focuses on. Full visibility. And the <strong>Smart Practice</strong> system tracks where [Child's Name] slows down and auto-generates targeted practice on that specific gap before moving forward."</p>
+    </div>
+
+    <div class="pitch-divider"></div>
+
+    <!-- STEP 5 -->
+    <div class="step"><div class="step-num">5</div><div class="step-body"><div class="step-title">Present the Investment + Risk Removal — 1 min</div><div class="step-sub">State the price. No hedging. Then immediately kill the risk.</div></div></div>
+
+    <div class="say">
+      <div class="say-label">AC Says</div>
+      <p>"The 12-month plan — 2 classes a week — is <strong>₹98,176 including all GST</strong>. 104 classes."</p>
+      <p>"And [Parent] — the most important thing: we have a <strong>100% pro-rata refund on all unused classes</strong>. If after any number of months you feel it's not delivering, you get back the full fee for every class [Child's Name] hasn't yet attended. No questions asked. 15 working days back to your original payment method. <strong>Zero risk.</strong> You only ever pay for what [Child's Name] actually attends."</p>
+      <p><em>[Stop. Do not fill the silence. Let the parent respond.]</em></p>
+    </div>
+
+    <div class="pitch-divider"></div>
+
+    <!-- STEP 6 -->
+    <div class="step"><div class="step-num">6</div><div class="step-body"><div class="step-title">Ask for the Decision — 30 sec</div><div class="step-sub">Ask directly. Get a clear answer. "Maybe" is not an answer.</div></div></div>
+
+    <div class="say">
+      <div class="say-label">AC Says</div>
+      <p>"So [Parent] — my recommendation for [Child's Name] is the 12-month plan. <strong>Shall we go ahead?</strong>"</p>
+      <p><em>[If YES: "Wonderful. I'm sending you the payment link right now on WhatsApp — it takes 5 minutes to complete. Once it's done, the teacher will be in touch to schedule the regular slot. Congratulations — [Child's Name]'s MathFit journey has officially started!"]</em></p>
+      <p><em>[If not yet: "Of course — what specifically would you like to think through? Let's address it now rather than have you decide without the full picture."]</em></p>
+    </div>
+
+    <div class="pitch-divider"></div>
+    <h3>Objections — Version A (Parent Already Knows MathFit)</h3>
+    <p style="color:#666;font-size:14px;margin-bottom:20px;">These are objections that arise after a briefed parent has watched the trial. Handle them in order — address one fully before moving to the next.</p>
+
+    <div class="obj">
+      <div class="obj-trigger"><div class="obj-trigger-label">Objection</div><p>"It's still expensive — can we start with 3 months?"</p></div>
+      <div class="obj-counter">
+        <div class="obj-counter-label">Counter</div>
+        <p>"I completely understand. And the 3-month plan is available — ₹30,680 for 26 classes. But let me be honest with you about why I didn't recommend it: the MathFit journey takes about 3 months just to get through the diagnostic phase and start building real momentum. If you do 3 months, you'll be evaluating at exactly the moment the compounding is beginning. Most parents who start on 3 months tell us the same thing — 'I wish I'd just gone for the year.'"</p>
+        <p>"If commitment is the concern, remember the refund policy — you can stop at any point and get back every unused class in full. That makes the 12-month plan effectively risk-free. You're not locked in — you're just securing the teacher's slot and the better price."</p>
+      </div>
+    </div>
+
+    <div class="obj">
+      <div class="obj-trigger"><div class="obj-trigger-label">Objection</div><p>"The trial was good but I need to think / I'll call you back"</p></div>
+      <div class="obj-counter">
+        <div class="obj-counter-label">Counter</div>
+        <p>"Of course — what specifically is the part you'd like to think through? I'd rather we address it now while the experience is fresh. Is it the price, the commitment, or something about the trial?"</p>
+        <p><em>[Identify the real objection and handle it specifically. Then:]</em></p>
+        <p>"If you do want a day to reflect — I completely understand. But one thing I want you to know: each Cuemath teacher takes on a maximum of <strong>35–40 students</strong>. That's a deliberate cap — it's what allows them to give each child the attention MathFit requires. [Teacher Name] has a limited number of slots left, and parents who've completed the trial — like [Child's Name] — get first right to choose their preferred slot. Once those slots fill, I'd either need to offer a different time or a different teacher entirely. When do you think you'll be ready to decide — tonight or tomorrow morning? I'll protect the slot as long as I can."</p>
+      </div>
+    </div>
+
+    <div class="obj">
+      <div class="obj-trigger"><div class="obj-trigger-label">Objection</div><p>"My child said the trial was okay but didn't seem very excited"</p></div>
+      <div class="obj-counter">
+        <div class="obj-counter-label">Counter</div>
+        <p>"That's really useful feedback — and actually completely normal for a first session. Think about it: [Child's Name] just met a stranger, was asked to do math, and was being observed by a parent. Most children are a little guarded in the first session. The real energy comes from Session 3–4 onwards, once the teacher knows the child and has found their specific wavelength."</p>
+        <p>"What I'd ask is: was the teacher gentle and warm? Was [Child's Name] doing the thinking, or was the teacher mostly explaining? If the dynamic was right — even if the energy was quiet — that's a good sign. If you felt something was genuinely off, we can always schedule a second trial with a different teacher."</p>
+      </div>
+    </div>
+
+    <div class="obj">
+      <div class="obj-trigger"><div class="obj-trigger-label">Objection</div><p>"My child is already doing well in school — I'm not sure this is necessary"</p></div>
+      <div class="obj-counter">
+        <div class="obj-counter-label">Counter</div>
+        <p>"That's actually our favourite type of student. We're not here to fix a problem — we're here to accelerate something already there. A child who is good at maths can become an exceptional thinker. School maths measures what [Child's Name] knows. MathFit builds how they think. The strongest students I've seen benefit the most — because they move from 'getting correct answers' to 'explaining why the answer is correct and what changes if the question changes.' That's the difference between a good student and an exceptional thinker."</p>
+      </div>
+    </div>
+
+    <div class="obj">
+      <div class="obj-trigger"><div class="obj-trigger-label">Objection</div><p>"Let me discuss with my spouse — they weren't on the call"</p></div>
+      <div class="obj-counter">
+        <div class="obj-counter-label">Counter</div>
+        <p>"Of course. While you're discussing, I'll send a summary on WhatsApp — the plan I recommended, the pricing, and the refund policy — so you both have exactly the same information. When do you think you'll have had a chance to talk? Tonight? I can follow up first thing tomorrow morning."</p>
+        <p>"One thing to keep in mind for the conversation: the pro-rata refund means there's really no risk in starting. If it doesn't work — every unused class comes back. The only question is whether to start [Child's Name]'s MathFit journey now or delay it by another month."</p>
+      </div>
+    </div>
+
+    <div class="obj">
+      <div class="obj-trigger"><div class="obj-trigger-label">Objection</div><p>"Can we start next month? We have holidays / exams / travel"</p></div>
+      <div class="obj-counter">
+        <div class="obj-counter-label">Counter</div>
+        <p>"Understood — and starting next month is fine. What I'd suggest: enrol now, and we'll schedule the first class for when you're back. That way the teacher's slot is secured — the same teacher [Child's Name] just met in the trial — and [Child's Name] doesn't lose another month on the waitlist. The pause facility is also there for planned breaks — up to twice a year."</p>
+      </div>
+    </div>
+
+    <div class="obj">
+      <div class="obj-trigger"><div class="obj-trigger-label">Objection</div><p>"What if we want a refund partway through?"</p></div>
+      <div class="obj-counter">
+        <div class="obj-counter-label">Counter</div>
+        <p>"Completely straightforward. 100% pro-rata refund on every class [Child's Name] hasn't attended yet. You request it within 12 months of the invoice date — we confirm it in 15 working days, back to your original payment method. The only things not refunded are classes already done, and payment processing fees. So if [Child's Name] does 30 classes and you decide to stop — you get back the fee for all remaining classes in full. Zero risk."</p>
+      </div>
+    </div>
+
+    <div class="obj">
+      <div class="obj-trigger"><div class="obj-trigger-label">Objection</div><p>"Can I change the teacher if it doesn't work out?"</p></div>
+      <div class="obj-counter">
+        <div class="obj-counter-label">Counter</div>
+        <p>"Anytime. Through the app or by contacting support. Your full class balance transfers to the new teacher — not a single session is lost. And if you'd like, we can even arrange a trial session with the new teacher first so [Child's Name] is comfortable before fully switching."</p>
+      </div>
+    </div>
+
+    <div class="obj">
+      <div class="obj-trigger"><div class="obj-trigger-label">Objection</div><p>"Can I pause if we go on vacation?"</p></div>
+      <div class="obj-counter">
+        <div class="obj-counter-label">Counter</div>
+        <p>"Yes — up to twice a year, for up to 2 weeks each time. During the pause, the subscription clock continues, so I'd recommend timing it around a planned break rather than a spontaneous one. If the pause is from our tutor's side — illness, emergency — your tenure is extended fully. Your flexibility is protected."</p>
+      </div>
+    </div>
+
+    <div class="obj">
+      <div class="obj-trigger"><div class="obj-trigger-label">Objection</div><p>"Can you add my GST number to the invoice?"</p></div>
+      <div class="obj-counter">
+        <div class="obj-counter-label">Counter</div>
+        <p>"I completely understand the ask — but Cuemath is registered as a B2C company. We provide services to students, not to businesses, so our invoice system cannot accept a B2B GST number. What I can confirm: the GST you pay — 18% — is fully refundable on all unused classes if you ever choose to cancel. So no GST is lost on the investment."</p>
+      </div>
+    </div>
+
+    <div class="say" style="margin-top:24px;">
+      <div class="say-label">The MathFit Journey Close — Use When Parent Is on the Fence</div>
+      <p>"[Parent], [Child's Name] has already started the MathFit journey — <strong>the trial was Day 1</strong>. The first 3 months are foundation-building. Months 4–6 are where the thinking shift happens. Month 7 onwards is where parents tell me they can't believe how differently their child approaches problems. <strong>Stopping now means starting over.</strong> And starting over always costs more — in time, in rebuilding the teacher relationship, in the child's confidence. The best decision right now is to keep the momentum going."</p>
+    </div>
+
+    <div class="box box-green">
+      <div class="box-label">Post-Call Protocol</div>
+      <p><strong>Said YES:</strong> Share WhatsApp payment confirmation — "I'm sending the payment link now. Once completed, the teacher will reach out to lock in your regular slot."<br><br>
+      <strong>"Thinking about it":</strong> Get a specific time before ending the call. "I'll call you [tomorrow at 10 AM / tonight at 8 PM]." Send Stage 6 WhatsApp immediately.<br><br>
+      <strong>Objection unresolved:</strong> Tag the exact objection in Superleap. Next call — lead with the specific reframe, not the full pitch again.</p>
+    </div>
+  </div>
+
+  <!-- ====================== SECTION 3: TD→P VERSION B ====================== -->
+  <div class="section" id="td-p-b">
+    <div class="section-bar"></div>
+    <div class="section-num">Section 3</div>
+    <h2>The TD→P Call — Version B</h2>
+    <div class="version-badge version-b">⚡ Use This Version: Parent Was NOT Briefed Before Trial (RNR / Rushed / No Intro Call)</div>
+    <p class="section-desc">This parent went into the trial without a full MathFit briefing. They may not know what Cuemath really is, why it costs what it does, or what the methodology is. This call has to do two things at once: introduce the ideology AND close the enrolment. It requires more groundwork. Be patient.</p>
+
+    <div class="box box-red">
+      <div class="box-label">Important Context</div>
+      <p>This parent is at a disadvantage through no fault of their own — they should have had the full intro call but didn't (they were RNR or the call was too short). Your job is to give them the MathFit briefing they missed, using the trial experience as the anchor. Do not jump to pricing before they understand what they just witnessed.</p>
+    </div>
+
+    <div class="pitch-divider"></div>
+
+    <!-- STEP 1 -->
+    <div class="step"><div class="step-num">1</div><div class="step-body"><div class="step-title">Open With Trial Feedback — Warm, No Agenda — 1–2 min</div><div class="step-sub">They haven't been pitched. Don't open with a pitch. Open as a curious, caring follow-up.</div></div></div>
+
+    <div class="say">
+      <div class="say-label">AC Says</div>
+      <p>"Hi [Parent Name]! This is [AC Name] from Cuemath. How are you? I hope the class just went smoothly — I wanted to call and check in personally."</p>
+      <p>"First and most important — <strong>how did [Child's Name] find it?</strong> Their experience is what matters most to us."</p>
+      <p><em>[Wait. Listen. Don't rush.]</em></p>
+      <p>"And from your side — as a parent watching — what was your impression of the session?"</p>
+      <p><em>[Listen fully.]</em></p>
+    </div>
+
+    <div class="ac-note">
+      <div class="ac-note-label">Reading the Response — Version B Context</div>
+      <p>This parent didn't have a briefing, so they may not have the vocabulary to describe what they saw. They may say "it was nice" or "my child answered some questions." That's fine. Your next job is to explain what they actually witnessed — before they evaluate it without the right lens.</p>
+      <p>If the response is very negative → Offer a re-trial first. Do not push to close.</p>
+    </div>
+
+    <div class="pitch-divider"></div>
+
+    <!-- STEP 2 -->
+    <div class="step"><div class="step-num">2</div><div class="step-body"><div class="step-title">Give Them the Lens — Explain What They Witnessed — 2–3 min</div><div class="step-sub">They saw a trial. You're going to tell them what it actually meant. This is where MathFit gets introduced.</div></div></div>
+
+    <div class="say">
+      <div class="say-label">AC Says</div>
+      <p>"[Parent], I want to share something with you — and I wish I'd had the chance to say this before the class, but let me say it now because it'll change how you think about what you just watched."</p>
+      <p>"Most parents come into a Cuemath session expecting a regular math class — teacher explains, child solves, teacher marks. What you saw today was completely different."</p>
+      <p>"At Cuemath, we use what we call <strong>cue-based teaching</strong>. When [Child's Name] gave an answer — right or wrong — the teacher didn't just confirm or correct. They asked: <em>'Why do you think that?'</em> or <em>'How did you get there?'</em> That's not a casual question — it's a teaching technique. The child has to explain their thinking. And in that explanation, they find the error themselves. Or they discover that their reasoning was solid all along. Either way, <strong>the learning becomes permanent</strong> — because they discovered it, not because they were told it."</p>
+      <p>"A teacher who explains builds dependency. <strong>A teacher who cues builds confidence.</strong> That's what you saw today."</p>
+    </div>
+
+    <div class="say">
+      <div class="say-label">AC Says — Introduce MathFit</div>
+      <p>"And this connects to something bigger that we call <strong>MathFit</strong>."</p>
+      <p>"We're growing up in a world reshaped by artificial intelligence. Machines can now calculate faster than any human. So the question every parent should be asking is: <strong>what skill actually matters when calculation is basically free?</strong>"</p>
+      <p>"The answer is mathematical thinking — the ability to reason, to see patterns, to look at a problem you've never seen before and not be afraid of it. That's MathFit. <strong>It's not about getting answers fast. It's about thinking clearly.</strong>"</p>
+      <p>"Think of it like physical fitness. You don't become fit by watching exercise videos. You go, you practice, you get coached. Mathematical fitness works exactly the same way. And that's what today's session was — Day 1 of [Child's Name]'s MathFit journey."</p>
+    </div>
+
+    <div class="say">
+      <div class="say-label">AC Says — Why MathFit Exists: The Story (for the unbriefed parent)</div>
+      <p>"I want to share where this comes from — because it changes how you think about what you just watched."</p>
+      <p>"Cuemath's founder — <strong>Manan Khurma</strong> — is an IIT Delhi alumnus who built Cuemath into a programme running in <strong>80+ countries</strong>. From that global view, he could see something most educators can't: how children across completely different systems were learning math, and what actually moved the needle."</p>
+      <p>"That research led to a hypothesis: <em>what if we designed a curriculum around the mathematical thinking that matters in the modern world — not just drilling procedures?</em> So Cuemath ran a pilot. Tested it with real students and real teachers. The outcomes were clear."</p>
+      <p>"Then we did something unusual: we spent <strong>six months specifically training our teachers</strong> in this method. Not general tutoring techniques — the specific cue-based approach that builds MathFit. <strong>From 1st March this year, every Cuemath student is on the MathFit curriculum.</strong> That's what [Child's Name] experienced today."</p>
+    </div>
+
+    <div class="pitch-divider"></div>
+
+    <!-- STEP 3 -->
+    <div class="step"><div class="step-num">3</div><div class="step-body"><div class="step-title">Understand Their Expectation — 1 min</div><div class="step-sub">You didn't get to ask this on the intro call. Ask it now. It's still the most important question.</div></div></div>
+
+    <div class="say">
+      <div class="say-label">AC Says</div>
+      <p>"[Parent] — I want to ask you something I usually ask parents before the trial, but since we hadn't had a chance to speak properly: <strong>what is your expectation from a programme like Cuemath?</strong> What would you want to see in [Child's Name] — say six months from today — that would tell you it's working?"</p>
+      <p><em>[Stop. Listen fully. This answer shapes the recommendation you make.]</em></p>
+    </div>
+
+    <div class="ac-note">
+      <div class="ac-note-label">Map Their Answer to MathFit</div>
+      <p>"My child makes silly mistakes" → Fluency gap. "Our Fluency pillar specifically addresses this — not by practicing more, but by understanding the why behind the procedure. Mistakes reduce when the understanding is solid."</p>
+      <p>"I want him to love math" → GRIC — Interest and Confidence. "That's exactly what the cue-based teaching builds. When a child discovers an answer themselves, math becomes something they can do — not something done to them."</p>
+      <p>"She's preparing for competitive exams" → Reasoning pillar. "Our Reasoning curriculum is designed for exactly this — unfamiliar problem types, pattern recognition, logical arguments. This is what separates strong school students from competitive exam performers."</p>
+    </div>
+
+    <div class="pitch-divider"></div>
+
+    <!-- STEP 4 -->
+    <div class="step"><div class="step-num">4</div><div class="step-body"><div class="step-title">What's Included — Brief Walk-Through — 2 min</div><div class="step-sub">Cover the curriculum pillars and key features. They haven't heard this before.</div></div></div>
+
+    <div class="say">
+      <div class="say-label">AC Says</div>
+      <p>"Let me walk you through what [Child's Name] gets — because this is not a standard tutoring programme and I want you to have the full picture."</p>
+      <p>"<strong>Everything is 1:1</strong> — one teacher, one student, every single class. This is non-negotiable for MathFit. The teacher is responding to <em>your</em> child's thinking in real time. Calibrating difficulty on the spot. Catching the exact moment [Child's Name] is on the edge of understanding — and cueing them to cross it. That cannot happen in a group."</p>
+      <p>"The curriculum has <strong>four distinct parts</strong> — every one taught the same way: cue-based, MathFit, guided discovery."</p>
+      <p>"<strong>Part 1: Grade-wise and board-wise academic curriculum.</strong> CBSE, ICSE, IB, Cambridge — fully aligned to [Child's Name]'s school. Every concept, every chapter. But instead of the teacher explaining, [Child's Name] is guided to figure it out. That understanding doesn't fade before the next exam — it's permanent because [Child's Name] discovered it."</p>
+      <p>"<strong>Part 2: Mental Maths curriculum.</strong> Yes, this builds calculation speed. But here's what most parents don't realise until they've been with us for a few months: <strong>mental maths builds focus.</strong> When a child consistently practices mental computation — holding numbers in their head, tracking steps without writing — they're training the brain to block out distraction. The same neural pathways that make you quick at mental math are what stop you getting distracted during study. Parents tell us: 'My child sits longer now. Their attention span has changed.' That's the mental maths curriculum doing its deeper work."</p>
+      <p>"<strong>Part 3: Enrichment — live real-world projects.</strong> Not textbook word problems. Real scenarios: what does a business need to break even? How does an architect use geometry? What does an investor actually do with percentages? [Child's Name] connects the maths to the real world — and that's what makes it relevant and interesting. This directly builds the Application pillar of MathFit and is often what makes children stop saying 'I don't see the point of maths.'"</p>
+      <p>"<strong>Part 4: IMO preparation and HOTS — High Order Thinking Skills.</strong> Olympiad-style problems. Pattern recognition, logical arguments, problem types [Child's Name] has never seen before. This is what the Reasoning pillar looks like in practice. It's what separates students who do well in school from those who perform in competitive exams — and we build this from whatever grade [Child's Name] is in now."</p>
+      <p>"You also get <strong>monthly PTMs</strong> — every month, you sit with the teacher and hear exactly where [Child's Name] is across each curriculum part, what's been built, and what the next month targets. Full visibility. And the <strong>Smart Practice system</strong> tracks where [Child's Name] slows down and automatically generates practice on that specific gap before the teacher moves forward."</p>
+    </div>
+
+    <div class="pitch-divider"></div>
+
+    <!-- STEP 5 -->
+    <div class="step"><div class="step-num">5</div><div class="step-body"><div class="step-title">Make the Recommendation — 1 min</div><div class="step-sub">One specific recommendation. Not a menu. Tell them what you'd enrol this child on.</div></div></div>
+
+    <div class="say">
+      <div class="say-label">AC Says</div>
+      <p>"Based on everything you've just shared — and based on what [Child's Name] showed in the trial today — my recommendation is the <strong>12-month plan, 2 classes per week</strong>."</p>
+      <p>"The reason I'm recommending 12 months specifically: the first 3 months are diagnostic and foundation-building. Months 4–6 are where the actual thinking shift starts happening. Month 7 onwards is where parents consistently tell us they can see the difference — not just in marks, but in how [Child's Name] talks about problems. You need to be in long enough for that to happen."</p>
+    </div>
+
+    <div class="pitch-divider"></div>
+
+    <!-- STEP 6 -->
+    <div class="step"><div class="step-num">6</div><div class="step-body"><div class="step-title">Present the Investment + Risk Removal — 1 min</div><div class="step-sub">State price. No apology. Kill the risk immediately after.</div></div></div>
+
+    <div class="say">
+      <div class="say-label">AC Says</div>
+      <p>"The 12-month plan — 2 classes a week — is <strong>₹98,176 including all GST</strong>. That's 104 live 1:1 classes."</p>
+      <p>"And the most important thing I want you to know: we have a <strong>100% pro-rata refund on all unused classes</strong>. If at any point — after month 2, month 4, month 8 — you feel the programme is not delivering, you get back every rupee for every class [Child's Name] hasn't attended yet. No questions, 15 working days, back to your original payment method."</p>
+      <p>"<strong>Zero risk. You only pay for what [Child's Name] uses.</strong>"</p>
+      <p><em>[Stop. Let the parent respond. Do not offer a cheaper option before they ask.]</em></p>
+    </div>
+
+    <div class="pitch-divider"></div>
+
+    <!-- STEP 7 -->
+    <div class="step"><div class="step-num">7</div><div class="step-body"><div class="step-title">Ask for the Decision — 30 sec</div></div></div>
+
+    <div class="say">
+      <div class="say-label">AC Says</div>
+      <p>"So [Parent] — my recommendation for [Child's Name] is the 12-month plan. <strong>Shall we go ahead?</strong>"</p>
+    </div>
+
+    <div class="pitch-divider"></div>
+    <h3>Objections — Version B (Unbriefed Parent)</h3>
+    <p style="color:#666;font-size:14px;margin-bottom:20px;">These parents haven't been through the full ideology briefing, so objections often come from a place of unfamiliarity. Be patient. Educate before you close.</p>
+
+    <div class="obj">
+      <div class="obj-trigger"><div class="obj-trigger-label">Objection</div><p>"I wasn't sure what was happening in the class — it didn't look like a normal tuition"</p></div>
+      <div class="obj-counter">
+        <div class="obj-counter-label">Counter</div>
+        <p>"That's the most important thing you observed — because you're right. It's not a normal tuition. A normal tuition covers homework and explains what the school teacher said. Cuemath builds the thinking behind the maths. The teacher wasn't explaining — they were guiding [Child's Name] to discover. That discomfort of 'figuring it out' is called Productive Struggle — and it's where real learning happens. It looks different because it is different."</p>
+      </div>
+    </div>
+
+    <div class="obj">
+      <div class="obj-trigger"><div class="obj-trigger-label">Objection</div><p>"The teacher was asking too many questions — why not just teach?"</p></div>
+      <div class="obj-counter">
+        <div class="obj-counter-label">Counter</div>
+        <p>"That's cue-based teaching — and it's intentional. When a child is told the answer, they forget it in two weeks. When a child discovers the answer themselves, it stays for life. The teacher's questions are the teaching. The moment [Child's Name] says 'Oh — I see why that works!' — that's a MathFit moment. It can't happen if the teacher is doing the thinking."</p>
+      </div>
+    </div>
+
+    <div class="obj">
+      <div class="obj-trigger"><div class="obj-trigger-label">Objection</div><p>"₹98,000 is a very big amount. I wasn't expecting this"</p></div>
+      <div class="obj-counter">
+        <div class="obj-counter-label">Counter</div>
+        <p>"I completely understand — and I wish I'd had the chance to share this before the trial so you had the full picture. Let me put it in context."</p>
+        <p>"104 classes, fully 1:1, with a trained and certified teacher. ₹98,176 over a year. That's under ₹950 per class for live, personalised, 1:1 coaching. Any offline 1:1 tutor at a comparable quality level would charge ₹800–1500 per hour — without the curriculum, without the Smart Practice, without the PTMs, without the Parent App."</p>
+        <p>"And the pro-rata refund means you're not locked in. Every unused class comes back. You only ever pay for what [Child's Name] attends."</p>
+        <p>"If the full year feels like a big commitment, the 6-month plan is ₹55,224 — 52 classes. Same teacher, same curriculum, same everything. And I can move you to 12 months at any point."</p>
+      </div>
+    </div>
+
+    <div class="obj">
+      <div class="obj-trigger"><div class="obj-trigger-label">Objection</div><p>"We're already with Bhanzu / an abacus class / a group platform"</p></div>
+      <div class="obj-counter">
+        <div class="obj-counter-label">Counter</div>
+        <p>"Those programmes sharpen calculation speed — and that's genuinely useful in early grades. But here's the limitation: group classes can't adapt to your child's specific gaps. The teacher is managing 6 children across different speeds and sometimes different grades. Your child competes in the group, not with their own previous performance — and that creates pressure or boredom depending on where they fall in the batch."</p>
+        <p>"What you saw in today's session was fundamentally different — [Child's Name] was the only student in that class. The teacher's entire attention was on them. The difficulty was calibrated specifically for them. That's what makes the thinking shift happen."</p>
+      </div>
+    </div>
+
+    <div class="obj">
+      <div class="obj-trigger"><div class="obj-trigger-label">Objection</div><p>"My child already has a home tutor — why do I need both?"</p></div>
+      <div class="obj-counter">
+        <div class="obj-counter-label">Counter</div>
+        <p>"Home tuition gets your child through the school syllabus. Cuemath builds the thinking that makes your child need less explaining from the tutor. They serve different purposes — and many of our families have both. Parents consistently tell us: after 3 months of Cuemath, the home tutor says the child is asking better questions. That's the MathFit effect. The two actually make each other more effective."</p>
+      </div>
+    </div>
+
+    <div class="obj">
+      <div class="obj-trigger"><div class="obj-trigger-label">Objection</div><p>"I need to think / I wasn't expecting to make a decision today"</p></div>
+      <div class="obj-counter">
+        <div class="obj-counter-label">Counter</div>
+        <p>"Completely fair — and I understand you're processing a lot. What I'd ask is: what specifically do you want to think through? Is it the price, whether it'll work for [Child's Name], or something about the programme itself? Let's address whichever part it is — I'd rather you make a confident decision with the full picture than make a cautious one without it."</p>
+        <p><em>[Handle the specific concern. Then:]</em> "I'll send everything on WhatsApp right now — the recommendation, the pricing, the refund policy — so you have it all in writing. One thing I'd ask you to keep in mind: each teacher takes a maximum of <strong>35–40 students</strong> — that cap is what makes the 1:1 quality possible. Parents who've completed the trial get first right to choose their preferred time slot. Once a slot fills, I can't hold it. When would work for a quick follow-up — tomorrow morning?"</p>
+      </div>
+    </div>
+
+    <div class="obj">
+      <div class="obj-trigger"><div class="obj-trigger-label">Objection</div><p>"Why can't we do monthly — I want to try one month first"</p></div>
+      <div class="obj-counter">
+        <div class="obj-counter-label">Counter</div>
+        <p>"I completely understand the instinct. Here's why monthly isn't possible — and it's genuinely in [Child's Name]'s interest. In a monthly model, the slot you book this month could be taken by another family next month. Cuemath's promise is the same teacher throughout — that teacher continuity is actually the biggest factor in a child's progress. You can't build a relationship in one month and then restart with a stranger."</p>
+        <p>"But here's what makes this feel as safe as a monthly plan: the pro-rata refund. If after Month 1 you feel it's not right — you request a refund, and you get back every unused class in full. You're not locked in. You're just protecting [Child's Name]'s slot and teacher."</p>
+      </div>
+    </div>
+
+    <div class="say" style="margin-top:24px;">
+      <div class="say-label">The MathFit Journey Close — Use When Parent Is Still Hesitating</div>
+      <p>"[Parent], I want to say something honestly. The world [Child's Name] is growing up in is very different from the one we grew up in. In 10 years, calculators and AI will handle everything that can be automated. What machines can't do is think creatively, reason through ambiguity, and look at something brand new with confidence. <strong>That's what MathFit builds.</strong>"</p>
+      <p>"Today's session was Day 1 of that journey. The question isn't whether it's worth starting. <strong>The question is whether you want [Child's Name] on the path that builds thinkers, or the one that builds calculators.</strong> Because in the world they're walking into — only one of those paths leads somewhere."</p>
+    </div>
+
+    <div class="box box-green">
+      <div class="box-label">Post-Call Protocol</div>
+      <p><strong>Said YES:</strong> Share WhatsApp payment confirmation immediately. "The payment link is coming to you on WhatsApp now — it takes 5 minutes. Once done, the teacher will be in touch to schedule the regular slot."<br><br>
+      <strong>"Thinking about it":</strong> Get a specific follow-up time on this call. Send Stage 6 WhatsApp with recommendation, price, and refund policy summarised. Call at exact promised time.<br><br>
+      <strong>Objection ongoing:</strong> Tag it in Superleap. Lead with the specific reframe on the next call — not the full pitch again.</p>
+    </div>
+  </div>
+
+  <!-- ====================== SECTION 4: ALL OBJECTIONS ====================== -->
+  <div class="section" id="objections">
+    <div class="section-bar"></div>
+    <div class="section-num">Section 4</div>
+    <h2>Complete Objection Reference</h2>
+    <p class="section-desc">Every objection an AC can encounter — with the exact counter. Study these until the response is instinctive. You should never be caught by a parent objection you haven't prepared for.</p>
+
+    <div class="box box-red">
+      <div class="box-label">Core Principle — Before Every Price Counter</div>
+      <p style="color:#7F1D1D;"><strong>Never discount. Never negotiate. Never break down per-class cost to make price sound smaller.</strong> The counter to price is always why the price is what it is. EMI and per-class math are payment options — not value counters. Offer EMI only after the parent has decided to enrol.</p>
+    </div>
+
+    <h3>Price & Value Objections</h3>
+
+    <table>
+      <tr><th>Parent Says</th><th>AC Counter</th></tr>
+      <tr><td>"Too expensive"</td><td>Teacher earns ₹700–750/session at this price — that's what quality costs. Compare 1:1 vs group — not the same product. Renewal rate 78–80% proves ROI.</td></tr>
+      <tr><td>"Can you discount?"</td><td>One price for every parent — fairness is our policy. Explain the trust argument: a parent who paid full price and later sees a neighbour pay less has been wronged.</td></tr>
+      <tr><td>"Someone I know pays less"</td><td>Pre-Feb 2026 pricing — that structure no longer exists. Every new family pays the same transparent price today.</td></tr>
+      <tr><td>"Why only 3/6/12 months?"</td><td>Teacher slot stability (monthly = lose the teacher). Personalization needs time. Compounding requires commitment. Refund policy makes it risk-free.</td></tr>
+      <tr><td>"Why not just monthly?"</td><td>Same as above. Refund policy = effectively risk-free. "You're not locked in — you're securing the teacher and the price."</td></tr>
+      <tr><td>"It's only math — why so expensive?"</td><td>Math is the foundation of all logical thinking. 1:1 live coaching with a certified teacher. 80+ countries. 78–80% renewal. No other edtech at this quality at this price.</td></tr>
+    </table>
+
+    <h3>Competitor & Comparison Objections</h3>
+
+    <table>
+      <tr><th>Parent Says</th><th>AC Counter</th></tr>
+      <tr><td>"Comparing with Vedantu / Byju's"</td><td>"Fast calculator or mathematical thinker? In 10 years, calculators are irrelevant." Never feature-match — reframe by outcome.</td></tr>
+      <tr><td>"Already with Bhanzu / Oda"</td><td>Group batch = mixed grades, no personalisation, speed only. Cuemath = true 1:1, concept-driven, school-aligned, mindset-building.</td></tr>
+      <tr><td>"Comparing with abacus / Vedic maths"</td><td>Speed tools — work for early grades, lose relevance after Grade 3. Don't build concepts or school alignment. Cuemath builds what schools and careers require.</td></tr>
+      <tr><td>"Have a home tutor"</td><td>Tutor = homework + exam prep. Cuemath = thinking layer. They coexist. Parents say: "After Cuemath, the tutor says my child asks better questions."</td></tr>
+      <tr><td>"Why only maths? Other subjects?"</td><td>Mastery requires focus. Math is the #1 subject where fear forms early. Strong math = strong thinker across all subjects. Specialisation is the product.</td></tr>
+    </table>
+
+    <h3>Trial & Experience Objections</h3>
+
+    <table>
+      <tr><th>Parent Says</th><th>AC Counter</th></tr>
+      <tr><td>"Child didn't enjoy the trial"</td><td>Diagnose: energy / rapport / talk time? Offer second trial with different teacher. "Every student is good. Every teacher is good. The magic is compatibility."</td></tr>
+      <tr><td>"It didn't look like a normal class"</td><td>That's intentional. Cue-based teaching ≠ normal class. Discovery > explanation. What looks different IS different — and that's the point.</td></tr>
+      <tr><td>"Teacher asked too many questions"</td><td>That IS the teaching. Questions → child discovers → stays for life. Explained answer → forgotten in two weeks.</td></tr>
+      <tr><td>"Child is already doing well in school"</td><td>Our best students. School measures what they know. MathFit builds how they think. Strong student → exceptional thinker.</td></tr>
+      <tr><td>"Child is too young"</td><td>Starting young = biggest advantage. Activities designed for attention spans. Curiosity + confidence built early carries through every grade.</td></tr>
+    </table>
+
+    <h3>Timing & Commitment Objections</h3>
+
+    <table>
+      <tr><th>Parent Says</th><th>AC Counter</th></tr>
+      <tr><td>"We'll start next month"</td><td>Enrol now, start later. Secures teacher and slot. Pause facility exists for planned breaks. Every month of delay = one month of compounding lost.</td></tr>
+      <tr><td>"Exams are coming"</td><td>Exam time = most important time for MathFit. Confidence about what they already know. One session/week — not a burden, a support.</td></tr>
+      <tr><td>"We're busy, can't commit"</td><td>55 minutes, 1:1, flexible scheduling. You and the teacher agree on the slot. Parents say it's the one thing they never want to cancel.</td></tr>
+      <tr><td>"Need to discuss with spouse"</td><td>Send summary on WhatsApp. Get a specific follow-up time. "The pro-rata refund means no risk in starting — only risk in waiting."</td></tr>
+      <tr><td>"After new academic year"</td><td>MathFit has no right time to start. Starting now = stronger foundation for the new year. Waiting = catch-up instead of compounding.</td></tr>
+    </table>
+
+    <h3>Policy & Practical Objections</h3>
+
+    <table>
+      <tr><th>Parent Says</th><th>AC Counter</th></tr>
+      <tr><td>"What if we want a refund?"</td><td>100% pro-rata on unused classes. Within 12 months of invoice. 15 working days. Original payment method. Zero risk — you only pay for classes attended.</td></tr>
+      <tr><td>"Can we pause?"</td><td>Yes. Up to 2x/year, max 2 weeks each (India). Subscription clock continues during parent pause. Tutor pause = tenure extended fully.</td></tr>
+      <tr><td>"Can we change the teacher?"</td><td>Anytime. Full class balance transfers. New teacher trial session available. Not a single class lost.</td></tr>
+      <tr><td>"What if payment fails?"</td><td>Cuemath retries on Day 1, 3, 7, 14. Child keeps scheduled classes during retry. Notification at every step.</td></tr>
+      <tr><td>"GST number on invoice"</td><td>B2C company — cannot issue B2B invoice. GST is refundable on all unused classes. No GST is lost.</td></tr>
+      <tr><td>"Screen time is already high"</td><td>Passive screen time (videos, scrolling) vs active screen time (live problem-solving with a teacher). Cuemath = active. Closer to a tutor in the room than a video.</td></tr>
+      <tr><td>"Missed classes — what happens?"</td><td>Up to 2 classes (Standard cadence) carry forward each billing cycle. Beyond that they lapse — which is why consistent scheduling from Day 1 matters.</td></tr>
+    </table>
+
+    <div class="box box-red" style="margin-top:24px;">
+      <div class="box-label">What Never To Say</div>
+      <p style="color:#7F1D1D;">✗ "At 12 months it's only ₹944/class" — payment framing. It signals you think the price is high.<br>
+      ✗ "You can do No-Cost EMI" as a price counter — EMI is a payment option, offer it only after they've decided to enrol.<br>
+      ✗ "We're offering a discount right now" — there are no discounts, ever.<br>
+      ✗ Accepting "maybe" or "I'll let you know" — always get a specific follow-up time on the same call.</p>
+    </div>
+  </div>
+
+  <div style="text-align:center;padding:32px 0;color:#999;font-size:13px;">
+    Cuemath India Business · India Admissions Team Training Manual · April 2026 · Version 2.0<br>
+    Owned by Rhythm Misra, Head of India Business · Questions: reach Neeraj Yadav (TL) or Rhythm directly<br>
+    <span style="color:#FFBA07;">This document is a companion to the India Admissions Team SOP — read the SOP first.</span>
+  </div>
+
+</div>
+</body>
+</html>
